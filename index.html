@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" style="background-color: #06080f !important; color-scheme: dark !important;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FLEXEditor - Universal Layer-Based Video Editor for Windows. Any layer accepts any media. Direct3D 11 zero-copy rendering, real-time HLSL shaders, and hardware NVENC/AMF/QSV encoding. Download 7-day free trial.">
+    <meta name="author" content="Mohit Bhagat (GetOpenSofts)">
+
+    <title>FLEXEditor - Universal Layer-Based Video Editor</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="64x64" href="flexeditoricon.png">
+    <link rel="icon" type="image/svg+xml" href="flexeditor.svg">
+    <link rel="apple-touch-icon" href="flexeditoricon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#60a5fa',
+                            500: '#2f79fd',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        darkBg: '#06080f',
+                        darkCard: '#0d1220',
+                        darkBorder: '#1c253d',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            background-color: #06080f !important;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .ambient-mesh {
+            background: radial-gradient(circle at 50% 0%, rgba(47, 121, 253, 0.22) 0%, rgba(37, 99, 235, 0.05) 50%, rgba(6, 8, 15, 0) 80%);
+        }
+
+        .btn-glow-blue {
+            background: linear-gradient(135deg, #2f79fd 0%, #1d4ed8 100%);
+            box-shadow: 0 0 30px rgba(47, 121, 253, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-glow-blue:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 45px rgba(47, 121, 253, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(13, 18, 32, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(47, 121, 253, 0.16);
+            transition: all 0.25s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(47, 121, 253, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(47, 121, 253, 0.2);
+        }
+
+        @keyframes subtle-beam {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-border {
+            background: linear-gradient(90deg, #2f79fd, #60a5fa, #38bdf8, #2f79fd);
+            background-size: 300% 300%;
+            animation: subtle-beam 8s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#06080f] text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Glow -->
+    <div class="fixed top-0 left-0 right-0 h-[500px] ambient-mesh pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/85 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5">
+                <img src="flexeditoricon.png" alt="Logo" class="w-8 h-8 object-contain">
+                <span class="font-extrabold text-lg tracking-tight text-white">
+                    FLEX<span class="text-brand-500">EDITOR</span>
+                </span>
+            </a>
+
+            <div class="flex items-center gap-5 text-sm font-medium text-slate-300">
+                <a href="#screenshots" class="hover:text-brand-400 hidden sm:inline">Screenshots</a>
+                <a href="#features" class="hover:text-brand-400 hidden sm:inline">Features</a>
+                <a href="#specs" class="hover:text-brand-400 hidden sm:inline">Specs</a>
+                <a href="#download" class="btn-glow-blue text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+                    <i data-feather="download" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+                    <span>Download Trial</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-24 pb-16">
+
+        <!-- HERO SECTION: BIG TITLE + LOGO + TRIAL DOWNLOAD BUTTON -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 text-center pt-8 pb-14">
+            
+            <!-- App Logo & Big Title -->
+            <div class="flex flex-col items-center justify-center mb-4">
+                <div class="w-20 h-20 rounded-2xl bg-[#0d1220] border border-brand-500/40 p-3 shadow-[0_0_35px_rgba(47,121,253,0.35)] flex items-center justify-center mb-4">
+                    <img src="flexeditoricon.png" alt="FLEXEditor Logo" class="w-14 h-14 object-contain">
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white">
+                    FLEX<span class="text-brand-500">EDITOR</span>
+                </h1>
+                <p class="text-base sm:text-xl text-slate-300 font-medium mt-2 max-w-xl">
+                    Universal Layer-Based Video Editor for Windows
+                </p>
+                <p class="text-xs sm:text-sm text-slate-400 mt-1 max-w-lg">
+                    Any layer accepts any type of media. Cut, arrange, grade colors, and export with hardware acceleration.
+                </p>
+            </div>
+
+            <!-- Big Download Button Area -->
+            <div class="mt-8 mb-4 flex flex-col items-center">
+                <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXEditor/FLEXEditor_Setup.exe" 
+                   target="_blank"
+                   class="btn-glow-blue text-white font-black px-10 py-5 rounded-2xl text-lg sm:text-xl flex items-center justify-center gap-3.5 shadow-2xl hover:scale-105 transition-all">
+                    <i data-feather="download" class="w-6 h-6 stroke-[3]"></i>
+                    <div class="text-left">
+                        <div class="leading-none text-lg sm:text-xl font-extrabold tracking-wide">DOWNLOAD 7-DAY FREE TRIAL</div>
+                        <div class="text-xs font-mono font-medium opacity-90 mt-1.5 text-blue-100">No sign up, no payment required</div>
+                    </div>
+                </a>
+
+                <!-- Meta Specs Pill -->
+                <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400 mt-4 font-mono">
+                    <span class="flex items-center gap-1.5 text-emerald-400">
+                        <i data-feather="check-circle" class="w-3.5 h-3.5"></i> 7-Day Free Trial
+                    </span>
+                    <span>•</span>
+                    <span>Windows 10 / 11 (64-bit)</span>
+                    <span>•</span>
+                    <span>~166 MB Setup</span>
+                    <span>•</span>
+                    <span class="text-brand-400">v2027.1.85</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SCREENSHOTS SECTION -->
+        <section id="screenshots" class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+            
+            <div class="flex items-center justify-between mb-5">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-white">Application Screenshots</h2>
+                    <p class="text-xs text-slate-400 mt-0.5">Live previews of FLEXEditor interface.</p>
+                </div>
+                <div class="text-xs font-mono text-brand-400 bg-brand-500/10 px-3 py-1 rounded-lg border border-brand-500/20">
+                    Universal Layer Compositor
+                </div>
+            </div>
+
+            <!-- Main Screenshot Display (Slot 1) -->
+            <div class="rounded-2xl p-[1px] animated-border shadow-2xl mb-6">
+                <div class="bg-[#0b0f19] rounded-2xl overflow-hidden border border-slate-800">
+                    <div class="bg-[#0e1424] px-4 py-2.5 border-b border-slate-800 flex items-center justify-between text-xs select-none">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500 inline-block"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500 inline-block"></span>
+                            <span id="caption-slot-1" class="text-slate-300 font-mono text-xs ml-2">FLEXEditor - Main Workstation Interface</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded">SCREENSHOT 1</span>
+                    </div>
+
+                    <!-- Screenshot Image 1 -->
+                    <div id="container-slot-1" class="relative bg-black flex items-center justify-center min-h-[300px]">
+                        <img id="img-slot-1" src="screenshot1.png" alt="FLEXEditor Main Screen" class="w-full h-auto block" onerror="this.onerror=null; this.src='screenshot.png';">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Sub Screenshots (Slot 2 & Slot 3) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Screenshot Slot 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="bg-[#0e1424] px-4 py-2 border-b border-slate-800 flex items-center justify-between text-xs">
+                        <span id="caption-slot-2" class="text-slate-300 font-medium">Layer Timeline & Precision Editing</span>
+                        <span class="text-[10px] font-mono text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded">SCREENSHOT 2</span>
+                    </div>
+                    <div id="container-slot-2" class="bg-black relative min-h-[200px] flex items-center justify-center">
+                        <img id="img-slot-2" src="screenshot2.png" alt="Timeline & Layers" class="w-full h-auto block" onerror="this.onerror=null; this.src='screenshot.png';">
+                    </div>
+                </div>
+
+                <!-- Screenshot Slot 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden">
+                    <div class="bg-[#0e1424] px-4 py-2 border-b border-slate-800 flex items-center justify-between text-xs">
+                        <span id="caption-slot-3" class="text-slate-300 font-medium">3-Way Color Wheels & Inspector</span>
+                        <span class="text-[10px] font-mono text-brand-300 bg-brand-500/20 px-2 py-0.5 rounded">SCREENSHOT 3</span>
+                    </div>
+                    <div id="container-slot-3" class="bg-black relative min-h-[200px] flex items-center justify-center">
+                        <img id="img-slot-3" src="screenshot3.png" alt="Color Grading Inspector" class="w-full h-auto block" onerror="this.onerror=null; this.src='screenshot.png';">
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CORE FEATURES: MAIN HEADINGS & BULLET LINES ONLY -->
+        <section id="features" class="max-w-5xl mx-auto px-4 sm:px-6 py-14">
+            
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">What FLEXEditor Can Do</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">Focused, high-performance video editing capabilities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="layers" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">Universal Layer System</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• Any layer accepts video, audio, text, or images</li>
+                        <li>• No rigid video vs audio track restrictions</li>
+                        <li>• Independent layer blending & opacity</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="scissors" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">Precision Timeline Editing</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• Razor cut, split clips, and ripple trim</li>
+                        <li>• Slip and slide multi-layer editing</li>
+                        <li>• Magnetic playhead and clip snapping</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="cpu" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">Direct3D 11 Real-Time Preview</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• Zero-copy GPU memory playback</li>
+                        <li>• Smooth 60 FPS playback on Windows</li>
+                        <li>• Instant background proxy generation</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="aperture" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">Color Grading & Effects</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• 3-Way Color Wheels (Lift, Gamma, Gain)</li>
+                        <li>• Selective Color hue isolation</li>
+                        <li>• GPU pixel shaders for lens & perspective</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="volume-2" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">Multi-Track Audio Engine</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• Decoupled WASAPI audio master clock</li>
+                        <li>• Zero audio drift during playback</li>
+                        <li>• Real-time peak meters & volume curves</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-card rounded-2xl p-5">
+                    <div class="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center mb-3">
+                        <i data-feather="zap" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-base mb-1.5">GPU Hardware Export</h3>
+                    <ul class="text-xs text-slate-300 space-y-1">
+                        <li>• NVIDIA NVENC hardware acceleration</li>
+                        <li>• AMD AMF & Intel QuickSync support</li>
+                        <li>• Multi-track render queue</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SPECIFICATIONS & TRIAL DETAILS -->
+        <section id="specs" class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+            <div class="glass-card rounded-2xl p-6 sm:p-8">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-feather="info" class="w-4 h-4 text-brand-400"></i>
+                    <span>Trial Details & System Requirements</span>
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div class="space-y-2 text-slate-300">
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">Trial Period</span>
+                            <span class="text-white font-medium">7 Days Full Access</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">Requirements</span>
+                            <span class="text-emerald-400 font-medium">No Sign-up, No Credit Card</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">OS Support</span>
+                            <span class="text-white font-medium">Windows 10 / Windows 11 (64-bit)</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-slate-300">
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">Graphics</span>
+                            <span class="text-white font-medium">DirectX 11 Compatible GPU</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">Runtime</span>
+                            <span class="text-white font-medium">.NET 9 (Auto-Bundled in Setup)</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-slate-800">
+                            <span class="text-slate-400">Developer</span>
+                            <span class="text-brand-400 font-medium">Mohit Bhagat (GetOpenSofts)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD HUB CARD -->
+        <section id="download" class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 text-center border border-brand-500/40 relative shadow-2xl">
+                
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                    Try FLEXEditor for Windows
+                </h2>
+                <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto mb-6">
+                    Experience universal layer editing on your PC with a 7-day free trial.
+                </p>
+
+                <div class="flex flex-col items-center justify-center">
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXEditor/FLEXEditor_Setup.exe" 
+                       target="_blank"
+                       class="btn-glow-blue text-white font-black px-9 py-4 rounded-xl text-base flex items-center justify-center gap-3 shadow-xl hover:scale-105 transition-all">
+                        <i data-feather="download" class="w-5 h-5 stroke-[2.5]"></i>
+                        <div class="text-left">
+                            <div class="leading-none text-base font-extrabold">DOWNLOAD 7-DAY FREE TRIAL</div>
+                            <div class="text-[11px] font-mono opacity-90 mt-1">No sign up, no payment required</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="text-[11px] font-mono text-slate-500 mt-5">
+                    FLEXEditor_Setup.exe (v2027.1.85) • Direct Cloudflare R2 Download
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-[#04060b] py-6 text-xs text-slate-400">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <img src="flexeditoricon.png" alt="Logo" class="w-5 h-5">
+                <span class="font-bold text-white">FLEXEditor</span>
+                <span class="text-slate-500">by <a href="https://www.getopensofts.in/" target="_blank" class="text-brand-400 hover:underline">Mohit Bhagat</a> • GetOpenSofts</span>
+            </div>
+
+            <div class="text-slate-500 text-center sm:text-right">
+                &copy; 2026-2027 GetOpenSofts. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Feather Icons -->
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

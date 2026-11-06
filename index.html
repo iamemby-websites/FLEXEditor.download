@@ -54,6 +54,8 @@
             color: #f1f5f9;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
         }
 
         .ambient-mesh {
@@ -99,27 +101,55 @@
     <div class="fixed top-0 left-0 right-0 h-[500px] ambient-mesh pointer-events-none z-0"></div>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/85 backdrop-blur-xl border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/90 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 flex-shrink-0 z-20">
                 <img src="flexeditoricon.png" alt="Logo" class="w-8 h-8 object-contain">
-                <span class="font-extrabold text-lg tracking-tight text-white">
+                <span class="font-extrabold text-lg tracking-tight text-white whitespace-nowrap">
                     FLEX<span class="text-brand-500">EDITOR</span>
                 </span>
             </a>
 
-            <div class="flex items-center gap-5 text-sm font-medium text-slate-300">
-                <a href="#screenshots" class="hover:text-brand-400 hidden sm:inline">Screenshots</a>
-                <a href="#features" class="hover:text-brand-400 hidden sm:inline">Features</a>
-                <a href="#specs" class="hover:text-brand-400 hidden sm:inline">Specs</a>
+            <!-- Desktop Navigation Links (Visible on md and up) -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#screenshots" class="hover:text-brand-400 transition-colors">Screenshots</a>
+                <a href="#features" class="hover:text-brand-400 transition-colors">Features</a>
+                <a href="#specs" class="hover:text-brand-400 transition-colors">Specs</a>
                 <a href="other-softwares.html" class="text-brand-400 hover:text-brand-300 font-semibold flex items-center gap-1 transition-colors">
                     <span>Other Softwares</span>
                     <i data-feather="arrow-up-right" class="w-3.5 h-3.5"></i>
                 </a>
-                <a href="#download" class="btn-glow-blue text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+            </nav>
+
+            <!-- Actions & Mobile Menu Button -->
+            <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 z-20">
+                <!-- Download Button (Always visible) -->
+                <a href="#download" class="btn-glow-blue text-white font-bold px-3.5 sm:px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 whitespace-nowrap">
                     <i data-feather="download" class="w-3.5 h-3.5 stroke-[2.5]"></i>
                     <span>Download Trial</span>
                 </a>
+
+                <!-- Mobile Hamburger Toggle (Visible on mobile only) -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white focus:outline-none cursor-pointer" aria-label="Toggle Menu">
+                    <i id="menu-icon" data-feather="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#090d18]/95 backdrop-blur-2xl border-b border-slate-800/90 px-4 py-4 space-y-3 shadow-2xl">
+            <a href="other-softwares.html" onclick="toggleMobileMenu()" class="flex items-center justify-between p-3.5 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-300 font-bold text-sm hover:bg-brand-500/20 transition-all">
+                <span class="flex items-center gap-2.5">
+                    <i data-feather="package" class="w-4 h-4 text-brand-400"></i>
+                    <span>Other Softwares by GetOpenSofts</span>
+                </span>
+                <i data-feather="arrow-up-right" class="w-4 h-4 text-brand-400"></i>
+            </a>
+            <div class="grid grid-cols-3 gap-2 pt-1 border-t border-slate-800/60">
+                <a href="#screenshots" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center text-xs text-slate-300 hover:text-white font-medium">Screenshots</a>
+                <a href="#features" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center text-xs text-slate-300 hover:text-white font-medium">Features</a>
+                <a href="#specs" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 text-center text-xs text-slate-300 hover:text-white font-medium">Specs</a>
             </div>
         </div>
     </header>
@@ -438,8 +468,18 @@
     </footer>
 
     <!-- Initialize Feather Icons -->
-    <script>
+        <script>
         feather.replace();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        }
     </script>
 </body>
 </html>

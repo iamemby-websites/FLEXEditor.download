@@ -277,7 +277,7 @@ class WebsiteManagerApp(tk.Tk):
             messagebox.showerror("GitHub Error", "GitHub token is missing in github_settings.cfg")
             return
 
-        files = ["index.html", "flexeditoricon.png", "flexeditor.svg", "motion-preset-thumbnail.jpg"]
+        files = ["index.html", "other-softwares.html", "flexeditoricon.png", "flexeditor.svg", "motion-preset-thumbnail.jpg"]
         for f in ["screenshot.png", "screenshot1.png", "screenshot2.png", "screenshot3.png"]:
             if os.path.exists(os.path.join(SCRIPT_DIR, f)):
                 files.append(f)

@@ -54,6 +54,8 @@
             color: #f1f5f9;
             font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
         }
 
         .ambient-mesh {
@@ -89,23 +91,25 @@
     <div class="fixed top-0 left-0 right-0 h-[500px] ambient-mesh pointer-events-none z-0"></div>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/85 backdrop-blur-xl border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2.5 group">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/90 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2 flex-shrink-0 z-20 group">
                 <img src="flexeditoricon.png" alt="Logo" class="w-8 h-8 object-contain transition-transform group-hover:scale-105">
-                <span class="font-extrabold text-lg tracking-tight text-white">
+                <span class="font-extrabold text-lg tracking-tight text-white whitespace-nowrap">
                     FLEX<span class="text-brand-500">EDITOR</span>
                 </span>
             </a>
 
-            <div class="flex items-center gap-5 text-sm font-medium text-slate-300">
-                <a href="index.html" class="hover:text-brand-400 flex items-center gap-1.5 transition-colors">
-                    <i data-feather="arrow-left" class="w-4 h-4"></i>
-                    <span>Back to FLEXEditor</span>
+            <!-- Action Navigation Buttons (Responsive & Non-colliding) -->
+            <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0 z-20">
+                <a href="index.html" class="px-2.5 sm:px-3 py-2 rounded-xl text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-900 border border-slate-800 flex items-center gap-1.5 transition-colors whitespace-nowrap">
+                    <i data-feather="arrow-left" class="w-3.5 h-3.5"></i>
+                    <span class="hidden sm:inline">Back to</span><span>FLEXEditor</span>
                 </a>
-                <a href="index.html#download" class="btn-glow-blue text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+                <a href="index.html#download" class="btn-glow-blue text-white font-bold px-3 sm:px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 whitespace-nowrap">
                     <i data-feather="download" class="w-3.5 h-3.5 stroke-[2.5]"></i>
-                    <span>Download FLEXEditor</span>
+                    <span>Download Trial</span>
                 </a>
             </div>
         </div>

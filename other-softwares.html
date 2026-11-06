@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" style="background-color: #06080f !important; color-scheme: dark !important;">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Other softwares and free tools by GetOpenSofts - Powerful Windows PC software, Android apps, and VEGAS Pro extensions created by Mohit Bhagat.">
+    <meta name="author" content="Mohit Bhagat (GetOpenSofts)">
+
+    <title>Other Softwares by GetOpenSofts</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="64x64" href="flexeditoricon.png">
+    <link rel="icon" type="image/svg+xml" href="flexeditor.svg">
+    <link rel="apple-touch-icon" href="flexeditoricon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            400: '#60a5fa',
+                            500: '#2f79fd',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        darkBg: '#06080f',
+                        darkCard: '#0d1220',
+                        darkBorder: '#1c253d',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            background-color: #06080f !important;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .ambient-mesh {
+            background: radial-gradient(circle at 50% 0%, rgba(47, 121, 253, 0.22) 0%, rgba(37, 99, 235, 0.05) 50%, rgba(6, 8, 15, 0) 80%);
+        }
+
+        .btn-glow-blue {
+            background: linear-gradient(135deg, #2f79fd 0%, #1d4ed8 100%);
+            box-shadow: 0 0 25px rgba(47, 121, 253, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-glow-blue:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 35px rgba(47, 121, 253, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(13, 18, 32, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(47, 121, 253, 0.16);
+            transition: all 0.25s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(47, 121, 253, 0.45);
+            box-shadow: 0 10px 30px -10px rgba(47, 121, 253, 0.22);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-[#06080f] text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Glow -->
+    <div class="fixed top-0 left-0 right-0 h-[500px] ambient-mesh pointer-events-none z-0"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#06080f]/85 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2.5 group">
+                <img src="flexeditoricon.png" alt="Logo" class="w-8 h-8 object-contain transition-transform group-hover:scale-105">
+                <span class="font-extrabold text-lg tracking-tight text-white">
+                    FLEX<span class="text-brand-500">EDITOR</span>
+                </span>
+            </a>
+
+            <div class="flex items-center gap-5 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-brand-400 flex items-center gap-1.5 transition-colors">
+                    <i data-feather="arrow-left" class="w-4 h-4"></i>
+                    <span>Back to FLEXEditor</span>
+                </a>
+                <a href="index.html#download" class="btn-glow-blue text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+                    <i data-feather="download" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+                    <span>Download FLEXEditor</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-24 pb-20">
+
+        <!-- HERO SECTION -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 text-center pt-8 pb-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-brand-500/30 text-xs text-brand-400 mb-4 shadow-[0_0_15px_rgba(47,121,253,0.2)]">
+                <i data-feather="package" class="w-3.5 h-3.5"></i>
+                <span class="font-semibold uppercase tracking-wider text-[11px]">GetOpenSofts Ecosystem</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-4">
+                Other Softwares by <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-blue-400 via-blue-200 to-brand-500 bg-clip-text text-transparent">
+                    GetOpenSofts
+                </span>
+            </h1>
+
+            <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
+                Explore our free suite of Windows PC utilities, audio/video tools, mobile apps, and video editing extensions created by <span class="text-white font-medium">Mohit Bhagat</span>. All tools are 100% free with no subscriptions.
+            </p>
+
+            <!-- Quick Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 font-medium text-xs">
+                <button onclick="filterCategory('all')" id="btn-filter-all" class="px-4 py-2 rounded-full bg-brand-500 text-white font-bold shadow-[0_0_15px_rgba(47,121,253,0.4)] transition-all">All Tools</button>
+                <button onclick="filterCategory('pc')" id="btn-filter-pc" class="px-4 py-2 rounded-full bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all">Windows PC</button>
+                <button onclick="filterCategory('android')" id="btn-filter-android" class="px-4 py-2 rounded-full bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all">Android Apps</button>
+                <button onclick="filterCategory('vegas')" id="btn-filter-vegas" class="px-4 py-2 rounded-full bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all">VEGAS Pro Extensions</button>
+            </div>
+        </section>
+
+        <!-- SOFTWARE CARDS GRID -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. FLEXEncoder -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FLEXEncoder</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            An all-in-one media tool to convert, resize, compress, and optimize audio, images, and videos effortlessly with multi-format hardware acceleration.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXEncoder/FLEXEncoder_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download FLEXEncoder (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 2. FLEXDownloader -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="download-cloud" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FLEXDownloader</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Lightweight, high-speed Windows tool to search, preview, and download videos and audio in up to 4K resolution and 320 kbps MP3/AAC.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXDownloader/FLEXDownloader_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download FLEXDownloader (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 3. FLEXVoiceGenerator -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="mic" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FLEXVoiceGenerator</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Zero-Shot AI Voice Cloning &amp; Speech Synthesis for Windows. Clone voices and generate natural multilingual &amp; Hinglish speech effortlessly.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXVoiceGenerator/FLEXVoiceGenerator_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Voice Generator (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 4. FLEXGamingHub -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="play-circle" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FLEXGamingHub</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Delivers an electrifying, high-energy arcade and physical party atmosphere straight to your Windows desktop with seamless auto-updates.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/FLEXGamingHub/FLEXGamingHub_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Gaming Hub (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 5. Filexa -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="folder" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Filexa</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A smart file management tool that lets you flatten folder structures, organize files into custom categories, and detect duplicate files rapidly.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/Filexa/Filexa_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Filexa (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 6. Timbar -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="clock" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Timbar</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A versatile tool for creating custom countdown timers and animated progress bars with color control. Export as transparent alpha MOV video files.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/TimbarApp/TimbarApp_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Timbar (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 7. MyTypingTutor -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="type" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">MyTypingTutor</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A flexible typing tutor. Practice with your own text content, save custom lessons, track WPM typing speed, accuracy, and detailed performance stats.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/MyTypingTutor/MyTypingTutor_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download MyTypingTutor (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 8. MCQ Generator -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="pc">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+                                <i data-feather="file-text" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Windows PC</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">MCQ Generator</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Generate multiple choice question papers from structured input data. Features configurable question counts and automatic answer key sheet generation.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Tools%20For%20Windows%20PC/MCQGenerator/MCQGenerator_Setup.exe" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download MCQ Generator (.exe)</span>
+                    </a>
+                </div>
+
+                <!-- 9. AquaEject Pro (Android) -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="android">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Android App</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">AquaEject Pro</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Speaker cleaner and water ejection tool for Android. Clear water &amp; dust from speakers with multi-frequency sonic sound waves and stereo balance tests.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Android%20Apps/AquaEject%20Pro/AquaEjectPro.apk" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download AquaEject Pro (.apk)</span>
+                    </a>
+                </div>
+
+                <!-- 10. FLEXDownloader Mobile (Android) -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="android">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+                                <i data-feather="smartphone" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Android App</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">FLEXDownloader Mobile</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Fast and lightweight media downloader for Android smartphones. High-speed multi-threaded downloads with intuitive file management.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/Free%20Android%20Apps/FLEXDownloader%20Mobile/FLEXDownloader.apk" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download FLEXDownloader (.apk)</span>
+                    </a>
+                </div>
+
+                <!-- 11. VEGAS Minitools -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="vegas">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                                <i data-feather="video" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">VEGAS Extension</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">VEGAS Minitools</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A powerful application extension loaded with essential timeline utilities and shortcuts to supercharge your editing workflow inside MAGIX VEGAS Pro.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/VEGAS%20Application%20Extensions/VEGASMinitools.zip" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Minitools (.zip)</span>
+                    </a>
+                </div>
+
+                <!-- 12. VEGAS Quick Render -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="vegas">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                                <i data-feather="film" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">VEGAS Extension</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">VEGAS Quick Render</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Built specifically to handle all rendering, batch exports, and encoding tasks in VEGAS Pro with ease and preset management.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/VEGAS%20Application%20Extensions/VEGAS%20Quick%20Render.zip" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Quick Render (.zip)</span>
+                    </a>
+                </div>
+
+                <!-- 13. Web In VEGAS -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="vegas">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                                <i data-feather="globe" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">VEGAS Extension</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Web In VEGAS</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Browse your favorite websites, assets, sound libraries, and references directly inside an integrated dockable panel in VEGAS Pro.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/VEGAS%20Application%20Extensions/WebInVegas.zip" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Web In VEGAS (.zip)</span>
+                    </a>
+                </div>
+
+                <!-- 14. Manage VEGAS Preferences -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="vegas">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                                <i data-feather="sliders" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">VEGAS Script</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Manage Preferences</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A smart utility that lets you back up, store, and restore your VEGAS Pro preferences, keyboard shortcuts, and UI layouts effortlessly.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/VEGAS%20Scripts/ManagePreferences.zip" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download Script (.zip)</span>
+                    </a>
+                </div>
+
+                <!-- 15. ZParallax Effect -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" data-cat="vegas">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+                                <i data-feather="layers" class="w-5 h-5"></i>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">VEGAS Script</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">ZParallax Effect</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            A powerful script plugin for creating multi-plane 3D parallax motion effects using 3D Source Alpha inside VEGAS Pro with custom presets.
+                        </p>
+                    </div>
+                    <a href="https://pub-eb6a98518234454f807d902ff0e36ff6.r2.dev/VEGAS%20Scripts/ZParallaxEffect.dll.zip" target="_blank" rel="noopener noreferrer" class="btn-glow-blue text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 w-full mt-auto">
+                        <i data-feather="download" class="w-4 h-4 stroke-[2.5]"></i>
+                        <span>Download ZParallax (.zip)</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BACK TO FLEXEDITOR CTA -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 mt-16 text-center">
+            <div class="glass-card rounded-3xl p-8 sm:p-10 border border-brand-500/40 relative">
+                <h2 class="text-2xl font-bold text-white mb-2">Looking for FLEXEditor?</h2>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-md mx-auto mb-6">
+                    Our flagship universal layer-based video editor with Direct3D 11 zero-copy real-time preview and hardware encoding.
+                </p>
+                <a href="index.html" class="inline-flex items-center gap-2 btn-glow-blue text-white font-bold px-8 py-3.5 rounded-xl text-sm">
+                    <i data-feather="arrow-left" class="w-4 h-4"></i>
+                    <span>Go to FLEXEditor Homepage</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-[#04060b] py-6 text-xs text-slate-400">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+                <img src="flexeditoricon.png" alt="Logo" class="w-5 h-5">
+                <span class="font-bold text-white">GetOpenSofts</span>
+                <span class="text-slate-500">by <a href="https://www.getopensofts.in/" target="_blank" class="text-brand-400 hover:underline">Mohit Bhagat</a></span>
+            </div>
+
+            <div class="flex items-center gap-5 text-slate-400">
+                <a href="index.html" class="hover:text-brand-400">FLEXEditor</a>
+                <a href="other-softwares.html" class="text-brand-400">Other Softwares</a>
+                <a href="mailto:iamemby@gmail.com" class="hover:text-brand-400">Contact</a>
+            </div>
+
+            <div class="text-slate-500 text-center sm:text-right">
+                &copy; 2026-2027 GetOpenSofts. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Filter Script & Feather Init -->
+    <script>
+        feather.replace();
+
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('[data-cat]');
+            cards.forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update button styles
+            const btns = {
+                'all': document.getElementById('btn-filter-all'),
+                'pc': document.getElementById('btn-filter-pc'),
+                'android': document.getElementById('btn-filter-android'),
+                'vegas': document.getElementById('btn-filter-vegas')
+            };
+
+            for (const key in btns) {
+                if (key === cat) {
+                    btns[key].className = "px-4 py-2 rounded-full bg-brand-500 text-white font-bold shadow-[0_0_15px_rgba(47,121,253,0.4)] transition-all";
+                } else {
+                    btns[key].className = "px-4 py-2 rounded-full bg-slate-900/90 text-slate-400 hover:text-white hover:bg-slate-800 border border-slate-800 transition-all";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
